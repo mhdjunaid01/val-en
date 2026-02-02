@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Will You Be My Valentine? 💕</title>
+
+  <!-- Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Main Game Container -->
+  <div class="container" id="gameContainer">
+    <div class="card">
+      <div id="image-container">
+        <img src="public/initial-image.jpeg" alt="Valentine Bear" id="mainImage" class="fade-in">
+      </div>
+
+
+      <h1 class="title">Hey Shaa... 💕</h1>
+      <p class="message" id="caption">Will you be my Valentine? 💕</p>
+
+      <div class="button-zone" id="buttonZone">
+        <button class="btn btn-yes" id="yesBtn">YES</button>
+        <button class="btn btn-no" id="noBtn">NO</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Container (Hidden by default) -->
+  <div class="success-container" id="successContainer">
+    <div class="success-card">
+      <div class="celebration">🎉</div>
+      <h1 class="success-title">YAYYYY 💕</h1>
+
+      <p class="success-hint">Screenshot this and send it to me 😌</p>
+    </div>
+  </div>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
