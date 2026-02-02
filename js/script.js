@@ -21,7 +21,7 @@ const IMAGES = [
 ];
 
 const CAPTIONS = [
-    "Will you be my Valentine? 💕",           // Initial
+    "<span class='intro-text'>hey shaa</span>Will you be my Valentine? 💕",           // Initial
     "kaddikkum njn yes paranjillel 😡",       // 1st NO
     "yendh bangiya baby ne kanaan.. yes para babee 🥺", // 2nd NO
     "allelum njamala aarkkum vendallo 😭",    // 3rd NO
@@ -52,7 +52,7 @@ function updateUI(count) {
     }, 200);
 
     // 2. Update Caption
-    caption.textContent = CAPTIONS[count] || CAPTIONS[0];
+    caption.innerHTML = CAPTIONS[count] || CAPTIONS[0];
 
     // 3. Update Buttons
     // Reset scale classes first
@@ -230,3 +230,19 @@ function spawnHeart(container, emojis, initial = false) {
 
 // Start Background
 createFloatingHearts();
+
+// ===== BACKGROUND TEXT =====
+function createBackgroundText() {
+    const container = document.getElementById('bgScrollText');
+    const text = "i love u shaa  ❤️  ";
+    const repeatedText = text.repeat(20); // Make it long enough
+
+    // Create 15 rows
+    for (let i = 0; i < 15; i++) {
+        const row = document.createElement('div');
+        row.className = 'bg-scroll-row';
+        row.textContent = repeatedText;
+        container.appendChild(row);
+    }
+}
+createBackgroundText();

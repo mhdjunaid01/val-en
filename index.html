@@ -6,6 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Will You Be My Valentine? 💕</title>
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
   <!-- Confetti Library -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
@@ -16,13 +21,14 @@
   <!-- Main Game Container -->
   <div class="container" id="gameContainer">
     <div class="card">
+      <div class="bg-scroll-text" id="bgScrollText"></div>
       <div id="image-container">
         <img src="public/initial-image.jpeg" alt="Valentine Bear" id="mainImage" class="fade-in">
       </div>
 
 
       <h1 class="title">Hey Shaa... 💕</h1>
-      <p class="message" id="caption">Will you be my Valentine? 💕</p>
+      <p class="message" id="caption"><span class="intro-text">hey shaa</span>Will you be my Valentine? 💕</p>
 
       <div class="button-zone" id="buttonZone">
         <button class="btn btn-yes" id="yesBtn">YES</button>

@@ -100,6 +100,58 @@ body::after {
     animation: slideIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    /* Ensure z-index context */
+}
+
+.bg-scroll-text {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: 0;
+    opacity: 0.1;
+    /* Subtle */
+    transform: rotate(-15deg);
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.bg-scroll-row {
+    white-space: nowrap;
+    font-family: 'Pacifico', cursive;
+    /* Match the new aesthetic */
+    font-size: 24px;
+    color: #ff4d94;
+    margin-bottom: 20px;
+    animation: scrollText 20s linear infinite;
+}
+
+.bg-scroll-row:nth-child(even) {
+    animation-direction: reverse;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Ensure content stays on top */
+#image-container,
+.title,
+.message,
+.button-zone {
+    position: relative;
+    z-index: 1;
 }
 
 .card:hover {
@@ -161,6 +213,19 @@ body::after {
     margin-bottom: 30px;
     min-height: 60px;
     /* Prevent layout jump */
+}
+
+.intro-text {
+    display: block;
+    /* distinct line? or inline-block? User said "front of". Block looks like a mini-header. Let's try block for emphasis or inline. I'll stick to inline for "front of" unless user wants separate line. */
+    display: block;
+    /* Actually, making it block looks cleaner for "Hey Shaa..." then the question below. */
+    color: #ff4d94;
+    /* Dark Pink */
+    font-family: 'Pacifico', cursive, sans-serif;
+    /* Try to match a "special" font if imported, otherwise cursive */
+    font-size: 1.4em;
+    margin-bottom: 8px;
 }
 
 /* ===== BUTTON SCALING ===== */
